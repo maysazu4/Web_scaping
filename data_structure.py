@@ -11,8 +11,8 @@ def create_tags_appearance_dict(tags_list):
             if processed_tag in tagsDict:
                 new_value = tagsDict[processed_tag] + 1
                 tagsDict.update({processed_tag: new_value})
-        else:
-            tagsDict.update({processed_tag : 1})
+            else:
+                tagsDict.update({processed_tag : 1})
     return tagsDict
 
 
@@ -24,7 +24,7 @@ def get_separated_lists_toptags_appearance(tagsDict):
     for tag,appearance in tagsDict.items():
         sum += 1
         all_tags.append(tag)
-        if appearance == 1:
+        if appearance < 6:
             continue
         top_tags.append(tag)
         top_tags_appearance.append(appearance)
